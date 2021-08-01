@@ -1,0 +1,68 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
+
+
+
+*{
+  margin:0;
+  padding:0;
+
+}
+
+#header h1{
+color:black;
+font-family: 'Zen Loop', cursive;
+}
+
+#header #nav ul{
+  display:flex;
+  background-color:black;
+  justify-content: space-around;
+padding: 9px 0px;
+
+}
+#header #nav ul li{
+  list-style:none;
+
+  margin:0px 5px;
+}
+#header #nav ul li a{
+  text-decoration:none;
+  padding: 7px 7px;
+  font-family: cursive;
+  color:white;
+}
+#header #nav ul li a:hover{
+  color:black;
+  background-color: white;
+  border-radius:20px;
+}
+#main{
+      margin-top: 27px;
+      width: 100%;
+}
+#main h2{
+  font-family: 'Zen Loop', cursive;
+  text-align:center;
+}
+#main table{
+margin-top: 31px;
+font-family: cursive;
+}
+table,th,td{
+  border:1px solid black;
+}
+table{
+  border-collapse:collapse;
+  border-spacing: 5px 10px;
+}
+table td,td{
+  padding:10px;
+}
+table caption{
+  caption-side: top;
+}
+table{
+  width: 90%;
+    margin: 30px auto;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Book Record</title>
+    <link rel="stylesheet" href="{% static 'css/edit_book.css' %}">
+  </head>
+  <body>
+    <div class="" id="header">
+      <h1>Book Record Management</h1>
+      <div class="" id="nav">
+        <ul>
+          <li>  <a href="http://localhost:8000/brm/view-books">View Books</a></li>
+          <li><a href="http://localhost:8000/brm/new-book">Add New Book</a></li>
+          <li>  <a href="http://localhost:8000/brm/search-book">Search Books</a></li>
+          <li><a href="http://localhost:8000/brm/logout/">Logout</a></li>
+
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="" id="main">
+      <h2>Edit Book Record </h2>
+      <form class="" action="http://localhost:8000/brm/edit/" method="post">
+        <input type="hidden" name="bookid" value="{{book.id}}">
+        {% csrf_token %}
+        <div class="box">
+          {{form.title.label_tag}}
+            {{form.title}}
+        </div>
+        <div class="box">
+          {{form.author.label_tag}}
+          {{form.author}}
+        </div>
+        <div class="box">
+          {{form.price.label_tag}}
+          {{form.price}}
+        </div>
+        <div class="box">
+          {{form.publisher.label_tag}}
+          {{form.publisher}}
+        </div>
+
+            <input type="submit" name="" value="Update" id="btn">
+
+
+      </form>
+    </div>
+  </body>
+</html>

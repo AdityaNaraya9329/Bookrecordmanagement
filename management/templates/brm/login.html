@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>All Books Records</title>
+    <link rel="stylesheet" href="{% static 'css/view_books.css' %}">
+  </head>
+  <style>
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
+
+
+
+  *{
+    margin:0;
+    padding:0;
+
+  }
+
+  #header h1{
+    text-align:center;
+    color:white;
+    display: block;
+  }
+body::before{
+  content: "";
+  background: url('https://cdn.pixabay.com/photo/2017/07/26/13/31/paper-2541687__340.jpg') no-repeat center center/cover;
+  position: absolute;
+  width:100%;
+  height:100%;
+  z-index:-1;
+  top:0;
+  left:0;
+  opacity: 0.5;
+}
+  #header #nav ul{
+    display:flex;
+    background-color:black;
+    justify-content: flex-end;
+  padding: 9px 0px;
+
+  }
+  #header #nav ul li{
+    list-style:none;
+
+    margin:0px 5px;
+  }
+  #header #nav ul li a{
+    text-decoration:none;
+    padding: 7px 7px;
+    font-family: cursive;
+    color:white;
+  }
+  #header #nav ul li a:hover{
+    color:black;
+    background-color: white;
+    border-radius:20px;
+  }
+
+
+.main{
+        display: none;
+        border:2px solid black;
+        display: flex;
+        justify-content: center;
+        padding: 26px;
+        width:50%;
+        margin:100px auto;
+}
+
+.main form .loginform input{
+  width: 300px;
+margin: 10px;
+padding: 4px;
+border-radius: 4px;
+
+}
+.main form .loginform input:focus
+{
+  border:2px solid blue;
+  box-shadow:3px 7px  4px blue;
+}
+.main form .loginform label{
+  font-family: cursive;
+}
+body h3{
+  text-align: center;
+  font-family: cursive;
+}
+  </style>
+  <body>
+    <div class="" id="header">
+      <div class="" id="nav">
+        <ul>
+          <li><a id="login" href="#">Login</a></li>
+
+        </ul>
+      </div>
+    </div>
+
+
+  <h3>Book Management System</h3>
+<div class="main">
+
+  <form  method="post">
+    {% csrf_token %}
+    <div class="loginform">
+      <label for="username">username</label>
+      <input type="text" name="username" value="" placeholder="Enter username" required>
+    </div>
+
+      <div class="loginform">
+        <label for="password">password</label>
+        <input type="password" name="password" value="" placeholder="User password" required>
+      </div>
+
+
+          <input type="submit" name="" value="login">
+
+  </form>
+<p>{{error}}</p>
+</div>
+<!-- javascript -->
+<script>
+  let login=document.getElementById('login').addEventListener('click',function(){
+    let main=document.querySelector('.main')
+    if(main.style.display=='block')
+      main.style.display='none'
+    else{
+      main.style.display='block'
+    }
+  })
+</script>
+
+  </body>
+</html>

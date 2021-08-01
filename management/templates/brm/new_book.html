@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>New book Record</title>
+
+  </head>
+  <body>
+    <div class="" id="header">
+      
+      <div class="" id="nav">
+        <ul>
+          <link rel="stylesheet" href="{% static 'css/new_book.css' %}">
+          <li>  <a href="http://localhost:8000/brm/view-books">View Books</a></li>
+          <li><a href="http://localhost:8000/brm/new-book">Add New Book</a></li>
+          <li>  <a href="http://localhost:8000/brm/search-book">Search Books</a></li>
+          <li><a href="http://localhost:8000/brm/logout/">Logout</a></li>
+
+        </ul>
+      </div>
+    </div>
+
+    <h2>Add New Record</h2>
+    <div class="" id="container">
+
+      <form class="" action="http://localhost:8000/brm/add/" method="post">
+        {% csrf_token %}
+        <div class="box">
+          {{form.title.label_tag}}
+          {{form.title}}
+        </div>
+
+        <div class="box">
+          {{form.author.label_tag}}
+          {{form.author}}
+        </div>
+        <div class="box">
+          {{form.price.label_tag}}
+          {{form.price}}
+        </div>
+        <div class="box">
+          {{form.publisher.label_tag}}
+          {{form.publisher}}
+        </div>
+
+
+          <input type="submit" name="" value="Save" id="btn">
+      </form>
+    </div>
+  </body>
+</html>
